@@ -1,0 +1,29 @@
+Starting Initialization
+Win32 Window Created
+Creating D3D pointer
+Creating D3D device
+Render Window Created
+Initializing Graphics Stats for Delta Time and FPS
+Initializing InputRegistering new Resource type : texture
+Registering new Resource type : mesh
+Registering new Resource type : vertex shader
+Registering new Resource type : pixel shader
+Hooking a default Scene
+Registering new scene : Default
+Changing current scene to : Default
+Initializing Complete
+.
+.
+.
+.
+.
+Powering up the Engine
+Triangle Draw Failed
+Shutting Down Engine
+Destroying Scene Manager
+Destroying Resource Factory
+Destroying Resource Manager
+All right, Everything destroyed, Self Destructing now 
+Bye Bye :) :)
+
+I Game Hard, I Code Harder

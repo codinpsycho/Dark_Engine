@@ -1,0 +1,38 @@
+//////////////////////////Vertex Shader
+
+float4x4 matViewProj: register(c0);
+float4x4 matworld : register(c4);
+float3 lightDir : register(c8) ;
+
+struct VS_INPUT
+{
+	float4 Pos  : POSITION;
+	float4 color  : COLOR0;
+	float2 texUV  : TEXCOORD0;
+	float4 normal : NORMAL;
+	
+};
+
+
+struct VS_OUTPUT
+{
+	float4 Pos  : POSITION;
+	float2 texUV  : TEXCOORD0;
+	float3 pixelLight : TEXCOORD1;
+	
+	
+};
+
+
+VS_OUTPUT vs_main(VS_INPUT input) 
+{
+  VS_OUTPUT Out = (VS_OUTPUT)0;
+  Out.texUV = input.texUV;
+  float4x4 wvp = mul(matworld, matViewProj );	//WorldViewProjection Transformation
+  Out.pixelLight = float3(0,0,1)/*normalize(input.normal )*/;	
+  Out.Pos = mul(input.Pos,wvp );
+ 
+  return Out;
+}
+
+

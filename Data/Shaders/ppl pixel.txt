@@ -1,0 +1,21 @@
+
+
+/////////////////////////////////////////Pixel Shader
+sampler2D tex0 : register(s0);
+float4 lightDir : register(c8) ;
+
+struct PS_INPUT
+{
+	float3 color  : COLOR;
+	float2 texUV: TEXCOORD0;
+	float4 pixelLight : TEXCOORD1;
+};
+
+float4 ps_main( PS_INPUT input  ) : COLOR0
+{	
+
+	float diff =  dot(float3(0,0.0f,1.0f),input.pixelLight.xyz);
+	
+	return  diff * tex2D(tex0,input.texUV);
+	//return( float4( 1.0f, 0.0f, 0.0f, 0.1f ) );
+}
